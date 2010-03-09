@@ -4,9 +4,12 @@
 
 @since 2008-06-06
 
+@base-lib prototype
+http://code.google.com/apis/ajaxlibs/documentation/index.html#prototype
+
 @link
 Gcc UI Examples
 http://cz9908.com/showcase/?item=Gcc-UI-Lib&p=1
 
 @demo
-To be continued...
+-To be continued...
