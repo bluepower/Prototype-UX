@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mixed Popups Example</title>
+<link href="../../resources/css/gcc-example.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/css/gcc-window.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-window.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	var fnShowAlert = function() {
+		Gcc.showAlert('test content test content test content test content');
+	};
+
+	var fnShowConfirm = function() {
+		Gcc.showConfirm('test content test content test content test content test content test content', function() {
+			Gcc.showAlert('evoke callback function', function() {
+				Windows.closeAll();
+			});
+		});
+	};
+
+	var fnShowPrompt = function() {
+		var sHtml = '<div class="msg_container">' + 
+					  'test content test content<br /><input type="text" value="" style="width: 260px;" /><br /><br />' + 
+					'</div>';
+	    Dialog.confirm(sHtml, {
+			title: 'system Prompt',
+			className: 'demeter',
+			buttonClass: 'btn_alert',
+			width: 280,
+			draggable: true,
+			closable: true,
+			showEffect: Element.show,
+			hideEffect: Element.hide
+		});
+	};
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2>1. Popup Alert</h2>
+<div class="playground">
+	<button onclick="fnShowAlert()">Show Popup Alert Div</button>
+	(auto height)
+</div>
+
+<h2>2. Popup Confirm</h2>
+<div class="playground">
+	<button onclick="fnShowConfirm()">Show Popup Confirm Div</button>
+	(auto height)
+</div>
+
+<h2>3. Popup Prompt</h2>
+<div class="playground">
+	<button onclick="fnShowPrompt()">Show Popup Prompt Div</button>
+	(auto height)
+</div>
+
+<h2>4. Popup Window</h2>
+<div class="playground">
+	<button disabled="disabled">Show Popup Window Div</button>
+	(Support ESC key, Resizer)
+</div>
+
+</body>
+</html>

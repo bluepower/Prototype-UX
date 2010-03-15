@@ -1,0 +1,8 @@
+.selectbox-wrapper { position: absolute;margin: 0;padding: 0;width: 400px;background-color: #fff;border: 1px solid #7F9DB9;font-size: 11px;text-align: left;max-height: 200px;overflow: hidden; }
+.selectbox-wrapper ul { margin: 0;padding: 0;list-style-type: none; }
+.selectbox-wrapper ul li { margin: 0;padding: 2px;list-style-type: none;display: block;cursor: pointer;font-family: Helvetica,Verdana,Geneva,Arial,sans-serif; }
+.selectbox-wrapper ul li.selected { background-color: #EAF2FB; }
+.selectbox-wrapper ul li.current { background-color: #CDD8E4; }
+
+.selectbox { margin: 0 5px 10px 0;padding-right: 16px;height: 16px;font-family: Helvetica,Verdana,Geneva,Arial,sans-serif;font-size: 11px;display : block;text-align: left; background: url(../images/icon-trigger.gif) no-repeat;background-position: right 0;cursor: pointer;border: 1px solid #7F9DB9;color: #333; }
+.combo-hover { background-position: right -18px; }
