@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Customized Confirm MessageBox Example</title>
+<link href="../../resources/css/gcc-example.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/css/gcc-window.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-window.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+    /**
+	 * Related javascript code samples
+	 * "Gcc.showAlert" is recommended to replace "fnShowAlert"
+	 */
+	var fnExample = function() {
+	    var sMessage = 'You have selected one or more CD Archives.<br /><br />'
+					 + 'Only completed Zip and Hosted Archives can be forwarded.';
+		
+		//customized Confirm function
+	    var fnConfirm = function() {
+			Gcc.showAlert('you click the ok button!', function() {
+			    Windows.closeAll();
+			});
+		};
+
+		Gcc.showAlert(sMessage, fnConfirm, {
+			iconClass: 'ico_warning',
+			title: 'LOCALIZATION TITLE OF ALERT DIALOG',
+			okLabel: 'OK LABEL',
+		    width:  350,
+			height: 140,
+			closeTooltip: 'LOCALIZATION CLOSE TOOLTIP',
+			okTooltip: 'LOCALIZATION OK TOOLTIP'
+		});
+	};
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2>1. Popup Customized Alert MessageBox</h2>
+<div class="playground">
+	<button onclick="fnExample()">Show Popup Customized Alert MessageBox</button>
+</div>
+
+</body>
+</html>
