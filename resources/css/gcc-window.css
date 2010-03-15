@@ -1,0 +1,51 @@
+/* default styles for Gcc window */
+.overlay_dialog { background-color: #666666;filter: alpha(opacity=60);-moz-opacity: 0.6;opacity: 0.6; }
+.overlay___invisible__ { background-color: #666666;filter: alpha(opacity=0);-moz-opacity: 0;opacity: 0; }
+.dialog_nw,.dialog_ne { width: 9px;height: 23px; }
+.dialog_n { height: 23px; }
+.dialog_e,.dialog_w { width: 2px; }
+.dialog_sw,.dialog_se { width: 9px;height: 19px; }
+.dialog_s { height: 19px; }
+.dialog_sizer { width: 9px;height: 19px;cursor: se-resize; }
+.dialog_close { width: 14px;height: 14px;position: absolute;top: 5px;left: 8px;cursor: pointer;z-index: 2000; }
+.dialog_minimize { width: 14px;height: 15px;position: absolute;top: 5px;left: 28px;cursor: pointer;z-index: 2000; }
+.dialog_maximize { width: 14px;height: 15px;position: absolute;top: 5px;left: 49px;cursor: pointer;z-index: 2000; }
+.dialog_title { float: left;height: 14px;font-family: Tahoma, Arial, sans-serif;font-size: 12px;text-align: center;width: 100%;color: #000; }
+.dialog_content { overflow: auto;color: #ddd;font-family: Tahoma, Arial, sans-serif;font-size: 10px;background-color: #123; }
+.top_draggable,.bottom_draggable { cursor: move; }
+.status_bar { font-size: 12px; }
+.status_bar input{ font-size: 12px; }
+.wired_frame { display: block;position: absolute;border: 1px #000 dashed; }
+
+.dialog { display: block;position: absolute; }
+.dialog table.table_window { border-collapse: collapse;border-spacing: 0;width: 100%;margin: 0;padding:0; }
+.dialog table.table_window td,.dialog table.table_window th { padding: 0; }
+.dialog .title_window { -moz-user-select: none; }
+.overlay_alert { background-color: #f6f6f6;filter: alpha(opacity=20);-moz-opacity: 0.2;opacity: 0.2; }
+
+/* customize theme styles for Gcc window */
+.alert_content { padding-left: 7px;padding-top: 10px;width: 296px;height: 55px;color: #000080;font: bold 13px Verdana, Helvetica, sans-serif;background: url(../images/bg-dialog-info.gif) no-repeat; }
+.overlay_demeter { background-color: #85BBEF;filter: alpha(opacity=50);-moz-opacity: 0.5;opacity: 0.5; }
+.demeter_nw { background: #1C67AB url(../images/blank.gif) no-repeat top left;width: 1px;height: 24px; }
+.demeter_ne { background: #1C67AB url(../images/blank.gif) no-repeat top right;width: 1px;height: 24px; }
+.demeter_w,.demeter_e { background-color: #1C67AB;width: 1px; }
+.demeter_sw { background: #1C67AB url(../images/blank.gif) no-repeat left bottom;width: 9px;height: 2px; }
+.demeter_s { background-color: #1C67AB;height: 2px; }
+.demeter_se,.demeter_sizer { background: #1C67AB url(../images/blank.gif) no-repeat right bottom;width: 9px;height: 2px; }
+.demeter_sizer { cursor: se-resize; }
+.demeter_close { width: 15px;height: 15px;background: transparent url(../images/icon-btn-close.gif) no-repeat 0 0;position: absolute;top: 4px;right: 5px;cursor: pointer;z-index: 1000; }
+.demeter_minimize { width: 15px;height: 15px;background: transparent url(../images/icon-btn-minimize.gif) no-repeat 0 0;position: absolute;top: 4px;right: 24px;cursor: pointer;z-index: 1000; }
+.demeter_maximize { width: 15px;height: 15px;background: transparent url(../images/icon-btn-maximize.gif) no-repeat 0 0;position: absolute;top: 4px;right: 42px;cursor: pointer;z-index: 1000; }
+.demeter_title { padding-left: 5px;float: left;height: 20px;font-size: 12px;text-align: left;margin-top: 2px;width: 100%;color: #fff;font-weight: bold;font-family: Helvetica, Verdana, sans-serif; }
+.demeter_content { background-color: #E9EFF5;font-size: 11px; }
+.demeter_message { padding-top: 5px;padding-left: 5px; }
+.demeter_buttons { clear: both;text-align: center; }
+.btn_alert { height: 20px;border: 0;color: #1C67AB;text-decoration: underline;font: bold 11px Helvetica, Verdana, sans-serif;text-align: left; }
+.ok_button { padding-left: 22px;background: url(../images/bg-btn-ok.gif) no-repeat; }
+.cancel_button { margin-left: 5px;padding-left: 22px;background: url(../images/bg-btn-cancel.gif) no-repeat; }
+.ico_question { background: url(../images/icon-question.gif) no-repeat 3px 0; }
+.ico_info { background: url(../images/icon-info.gif) no-repeat 3px 0; }
+.ico_warning { background: url(../images/icon-warning.png) no-repeat 3px 0; }
+.msg_container { clear: both; }
+.msg_content { float: left;padding: 0 5px 18px 38px;text-align: left; }
+.status_bar { height: 1px;overflow: hidden; }
