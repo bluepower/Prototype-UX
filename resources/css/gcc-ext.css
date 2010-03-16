@@ -1,0 +1,16 @@
+.item-clear { clear: both;height: 0;overflow: hidden; }
+
+.popup-wrap { padding: 4px 10px 10px 10px; }
+	.popup-wrap .txt-field { clear: both; }
+	.popup-wrap .group-btns { clear: both;margin-top: 10px; }
+		.popup-wrap .group-btns .rt { float: right; }
+		.popup-wrap .group-btns a { float: left;margin-right: 10px;padding-left: 22px;height: 20px;line-height: 20px;font-size: 105%;font-weight: bold;text-decoration: underline; }
+        .popup-wrap .group-btns a:link { font: Helvetica,Verdana,sans-serif;color: #1C67AB;text-decoration: underline; }
+        .popup-wrap .group-btns a:visited { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
+        .popup-wrap .group-btns a:hover { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
+        .popup-wrap .group-btns a:active { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: none; }
+
+a.btn-delete { background: url(../images/icon-delete-sprite.gif) no-repeat 0 0; }
+
+.image-logo-display { margin-top: 25px;text-align: center; }
+    .image-logo-display img { cursor: pointer; }

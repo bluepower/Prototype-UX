@@ -50,5 +50,4 @@
 .msg_content { float: left;padding: 0 5px 18px 38px;text-align: left; }
 .status_bar { height: 1px;overflow: hidden; }
 
-html>body .demeter_n { background: #1C67AB url(../images/bg-tab-light.png) repeat-x;height:24px; }
-html>body .demeter_nw,html>body .demeter_ne,html>body .demeter_w,html>body .demeter_e,html>body .demeter_sw,html>body .demeter_s,html>body .demeter_se { background-color: #1C67AB; }
+.demeter_n { background: #1C67AB url(../images/bg-tab-light.png) repeat-x 0 0;height:24px;_background: none;_background-color: #1C67AB; }

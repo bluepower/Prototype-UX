@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Image Preview Example</title>
+<link href="../../resources/css/gcc-example.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/css/gcc-window.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/css/gcc-ext.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-window.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	var fnImagePreview = function() {		
+		Gcc.locale.update({
+			'IMAGE_PREVIEW': "Image Preview:"
+		});
+
+		Gcc.setImagePreview({
+		    renderTo: 'image_preview_popup',
+			imageEl: 'image_logo',
+			title: 'Google Logo',
+			url: 'http://www.google.com/intl/en_ALL/images/logo.gif',
+			width: 380,
+			height: 160
+		});
+	};
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2>Simple Image Preview</h2>
+<div class="playground">
+	<button onclick="fnImagePreview()">Preview Google Logo</button>
+</div>
+
+  <!-- /////////////////////////// START Html Markups for Image Preview Popup /////////////////////////// -->
+  <div id="image_preview_popup" style="display: none;">
+      <!-- START Popup Wrap Area -->
+      <div class="popup-wrap">
+        <div class="txt-field">Image Preview Note...</div>
+        <div id="image_logo_display" class="image-logo-display">
+          <img id="image_logo" src="../../resources/images/s.gif" alt="Image Preview" title="Image Preview" />
+        </div>
+		<div class="group-btns">
+		  <div class="rt">
+			<a href="#" class="btn-delete" title="Close" onclick="Gcc.closeWindow();">Close</a>
+		  </div>
+		  <div class="item-clear"></div>
+		</div>
+      </div>
+      <!-- END Popup Wrap Area -->
+  </div>
+  <!-- /////////////////////////// END Html Markups for Image Preview Popup /////////////////////////// -->
+
+</body>
+</html>
