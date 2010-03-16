@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Multiple ComboBox instances</title>
+<link type="text/css" href="../../resources/css/gcc-window.css" rel="stylesheet" media="screen" />
+<link type="text/css" href="../../resources/css/gcc-combo-box.css" rel="stylesheet" media="screen" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-window.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+	document.observe('dom:loaded', function() {
+		$$('select.combo-box').each(function(item) {
+			new Gcc.ComboBox(item, { width: 200, trim: 32 }).init();
+		});
+	});
+
+	var onEvtChange = function(obj) {
+		Gcc.showAlert('You Click ComboBox which has ' + obj.options.length + ' options.');
+	};
+// ]]>
+</script>
+</head>
+
+<body>
+
+	  <form id="forms" method="get">
+        <!-- START Html Markups -->
+        <select class="combo-box" name="combobox" onchange="onEvtChange(this)">
+            <option value="1">option1option1option1option1option1</option>
+            <option value="2" selected="selected">option2option2</option>
+            <option value="3">option3option3option3</option>
+            <option value="4">option4option4option4option4option4option4</option>
+            <option value="5">option5option5</option>
+            <option value="6">option6option6option6option6option6option6option6option6option6option6option6</option>
+        </select>
+        <!-- END Html Markups -->
+
+		<input type="button" value="button1" style="visibility: hidden;"/>
+
+        <!-- START Html Markups -->
+        <select class="combo-box" name="combobox" style="margin-top: 50px;" onchange="onEvtChange(this)">
+            <option value="1">option1option1option1option1option1</option>
+            <option value="2">option2option2</option>
+            <option value="3" selected="selected">option3option3option3</option>
+        </select>
+        <!-- END Html Markups -->
+
+		<input type="button" value="button2" style="visibility: hidden;" />
+
+        <!-- START Html Markups -->
+        <select class="combo-box" name="combobox" style="margin-top: 50px;" onchange="onEvtChange(this)">
+            <option value="1" selected="selected">option1option1option1option1option1</option>
+            <option value="2">option2option2</option>
+        </select>
+        <!-- END Html Markups -->
+
+		<input type="button" value="button3" style="visibility: hidden;" />
+	  </form>
+
+</body>
+</html>

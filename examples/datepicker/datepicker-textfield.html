@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DatePicker Test - Textfield</title>
+<link type="text/css" href="../../resources/css/gcc-ext.css" rel="stylesheet" media="screen" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+<script type="text/javascript" src="../../src/gcc-util-date.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+  var aYearGroups  = ['2010', '2011', '2012', '2013'];
+  Gcc.locale.update({
+		'TODAY'          : 'Today',
+		'PREVIOUS_MONTH' : 'Previous month',
+		'NEXT_MONTH'     : 'Next month',
+		'SELECT_MONTH'   : 'Select month',
+		'SELECT_YEAR'    : 'Select year',
+		'CLOSE'          : 'Close',
+		'SN'             : 'Sn',
+		'M'              : 'M',
+		'T'              : 'T',
+		'W'              : 'W',
+		'TH'             : 'Th',
+		'F'              : 'F',
+		'S'              : 'S'
+  });
+
+  document.observe('dom:loaded', function() {
+      var dp = new Gcc.DatePicker({
+	      mode: 'textfield',
+		  currentDate: new Date(),
+		  months: Date.monthNames,
+          years: aYearGroups,
+		  disableRange: true
+      });
+      dp.init('datepicker-start-date');
+  });
+// ]]>
+</script>
+</head>
+
+<body>
+
+  <!-- START DatePicker Html Markup -->
+  <p>Date Range: FROM one year before current date TO the last month after three years</p>
+  <div class="popup-wrap" style="font-size: 90%;">
+	<input type="text" value="1/11/2010" style="float: left;margin-left: 20px;"/>
+	<img src="../../resources/images/s.gif" alt="date picker" title="date picker" id="datepicker-start-date" class="btn-datepicker" /> 
+	<div class="item-clear"></div>
+  </div>
+  <!-- END DatePicker Html Markup -->
+		  
+</body>
+</html>

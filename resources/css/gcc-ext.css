@@ -1,3 +1,6 @@
+body { margin: 5px 5px 0 5px;padding: 0;position: relative;font-size: small;background-color: #f0eCCf;font-family: Helvetica,Verdana,sans-serif;color: #000; }
+a:link { text-decoration: underline; }
+a:visited,a:hover,a:active { text-decoration: none; }
 .item-clear { clear: both;height: 0;overflow: hidden; }
 
 .popup-wrap { padding: 4px 10px 10px 10px; }
@@ -9,8 +12,82 @@
         .popup-wrap .group-btns a:visited { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
         .popup-wrap .group-btns a:hover { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
         .popup-wrap .group-btns a:active { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: none; }
+.popup-wrap select { color: #000080;font-size: 100%;font-family:Helvetica,Verdana,sans-serif; }
+.popup-wrap .lt-align1 { float: left;margin-left: 6px; }
+.popup-wrap .schedule-select-short { width: 75px; }
+.popup-wrap .schedule-select-short1 { width: 50px; }
 
 a.btn-delete { background: url(../images/icon-delete-sprite.gif) no-repeat 0 0; }
+img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;cursor: pointer;background: url(../images/icon-date-picker.gif) no-repeat; }
 
 .image-logo-display { margin-top: 25px;text-align: center; }
     .image-logo-display img { cursor: pointer; }
+
+.cal-nav-wrap { padding-top: 4px;padding-bottom: 4px; }
+	.cal-nav { clear: both;margin: 0 auto;width: 200px;height: 19px; }
+		.cal-dropdown { position: absolute;top: 0;left: 0;z-index: 10050;background-color: #f0eCCf;border: 1px solid #999;overflow: hidden; }
+			.cal-dropdown ul { margin: 0;padding: 0;list-style-type: none; }
+				.cal-dropdown ul li { margin-top: 1px;margin-bottom: 1px; }
+					.cal-dropdown ul li a.year, .cal-dropdown ul li a.month { padding-left: 4px;height: 18px;line-height: 18px;display: block;color: #666;font-size: 90%;text-decoration: none; }
+					.cal-dropdown ul li.select-item, .cal-dropdown ul li a.year:hover, .cal-dropdown ul li a:hover { color: #fff;background-color: #345385; }
+					.cal-dropdown ul li.select-item a { color: #fff; }
+					.cal-dropdown ul li a.state-grey:link,.cal-dropdown ul li a.state-grey:visited,.cal-dropdown ul li a.state-grey:hover,.cal-dropdown ul li a.state-grey:active { color: #666;background-color: #f0eCCf;text-decoration: none; }
+		.cal-dropdown .meeting-remainder { clear: both;margin-top: 1px; }
+			.meeting-remainder span { float: left;width: 30px;font-size: 80%;text-align: right; }
+			.meeting-remainder a.meeting { float: left;margin-left: 5px;padding: 0;width: 90px;height: 12px;font-size: 80%;text-decoration: underline;white-space: nowrap;overflow: hidden;color: #1C67AB; }
+			.meeting-remainder a.past { color: #000; }
+
+		/* CSS Sprites for arrows */
+		.cal-nav span,.cal-scroll-wrap span { float: right;margin-right: 4px;width: 10px;height: 6px;background: url(../images/icon-arrows-sprite.gif) no-repeat 0 0; }
+		.cal-nav ul { clear: both;margin: 0;padding: 0;list-style-type: none; }
+			.cal-nav ul li { float: left;height: 18px;border: 1px solid #fff;color: #fff;cursor: pointer;overflow: hidden; }
+			html>body .cal-nav ul li { float: left;height: 18px;border: 1px solid #fff;color: #fff;background: #345385 url(../images/bg-subtab-light.png) repeat-x;cursor: pointer; }
+				.cal-nav ul li.arrow-wrap { width: 20px; }
+					.cal-nav span.arrow-lt,.cal-nav span.arrow-rt { margin-top: 3px;width: 6px;height: 10px; }
+					.cal-nav span.arrow-lt { margin-right: 8px;background-position: 0 -7px; }
+					.cal-nav span.arrow-rt { margin-right: 7px;background-position: -18px -7px; }
+				.cal-nav ul li.month-wrap { margin-left: 2px;width: 88px; }
+				.cal-nav ul li.year-wrap { margin-left: 1px;margin-right: 2px;width: 55px; }
+					.cal-nav ul li .nav-month,.cal-nav ul li .nav-year { float: left;margin-left: 4px;_margin-left: 2px;line-height: 17px;font-size: 111%; }
+					.cal-nav span.arrow-down { margin-top: 5px;background-position: -7px -18px; }
+				.cal-nav ul li.state-grey { background-color: #aaa;cursor: default; }
+
+.cal-nav-info { height: 13px;text-align: center;color: #666;font-size: 101%; }
+	.cal-nav-info a { font-weight: bold; }
+	.cal-nav-info a:link { font: Helvetica,Verdana,sans-serif;color: #1C67AB;text-decoration: underline; }
+	.cal-nav-info a:visited { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
+	.cal-nav-info a:hover { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
+	.cal-nav-info a:active { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: none; }
+
+.datepicker { position: absolute;top: 0;left: 0;z-index: 10000;width: 198px;height: 220px;border: 1px solid #999;background-color: #DED3AE; }
+	.dp-wrap { padding: 7px 9px; }
+		.dp-wrap .cal-nav-wrap { padding: 0;margin-bottom: 6px; }
+			.dp-wrap .cal-nav { width: 185px;height: 18px; }
+				.dp-wrap .cal-nav ul li { height: 16px; }
+				    .dp-wrap .cal-nav ul li.arrow-wrap { width: 18px; }
+					.dp-wrap .cal-nav ul li.month-wrap { margin-left: 4px;width: 80px; }
+					.dp-wrap .cal-nav ul li.year-wrap { margin-left: 5px;margin-right: 4px;width: 47px; }
+					.dp-wrap .cal-nav ul li .nav-month,.dp-wrap .cal-nav ul li .nav-year { font-size: 80%;margin-left: 3px;_margin-left: 1px; }
+		.dp-wrap .cal-nav-info { font-size: 80%;color: #000; }
+			.dp-wrap .cal-nav-info a { font-size: 101%;margin-right: 5px; }
+		.dp-wrap .cal-pane-wrap { margin-top: 6px; }
+			ul.cal-pane-hd { margin: 0;padding: 0;list-style-type: none;border: 1px solid #fff;height: 16px; }
+            html>body ul.cal-pane-hd { margin: 0;padding: 0;list-style-type: none;border: 1px solid #fff;height: 16px;background: #345385 url(../images/bg-subtab-light.png) repeat-x; }
+				ul.cal-pane-hd li { float: left;width: 25px;line-height: 16px;color: #fff;text-align: center;font-size: 80%; }
+			.dp-wrap .cal-pane-wrap .cal-pane-bd { border: 1px solid #999;border-top: 0;background-color: #ffc;padding-top: 5px;padding-bottom: 4px; }
+				table.dp-grid { width: 100%;border-collapse: collapse; }
+					table.dp-grid td { margin: 0;padding: 1px 1px 0 0; }
+					table.dp-grid td a { float: right;width: 16px;height: 15px;line-height: 15px;margin-right: 2px;padding-right: 1px;border: 1px solid #fff;font-size: 80%;color: #000;text-decoration: none;text-align: right; }
+                    table.dp-grid td a:visited { color: #000;text-decoration: none; }
+					table.dp-grid td a:hover,table.dp-grid td a.select-day { border: 1px solid #1C67AB; }
+                    table.dp-grid td a:active { color: #000;text-decoration: none; }
+                    table.dp-grid td a.today { background-color: #ff9; }
+					table.dp-grid td a.outside, table.dp-grid td a.outside:active, table.dp-grid td a.outside:visited { color: #999; }
+					table.dp-grid td a.outside:hover { cursor: default;border: 1px solid #fff; }
+			.dp-wrap .cal-pane-wrap .cal-pane-ft { clear: both; }
+                .cal-pane-ft a { float: right;margin-top: 10px;padding-left: 20px;height: 16px;line-height: 16px;text-decoration: underline;font-size: 80%; }
+                .cal-pane-ft a:link { font: Helvetica,Verdana,sans-serif;color: #1C67AB;text-decoration: underline; }
+                .cal-pane-ft a:visited { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
+                .cal-pane-ft a:hover { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
+                .cal-pane-ft a:active { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: none; }
+                .cal-pane-ft a.btn-small-close { background: url(../images/icon-btn-small-close.gif) no-repeat; }

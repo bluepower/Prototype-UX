@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DatePicker Test - dropdown</title>
+<link type="text/css" href="../../resources/css/gcc-ext.css" rel="stylesheet" media="screen" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+<script type="text/javascript" src="../../src/gcc-util-date.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+  var aYearGroups  = ['2009', '2010', '2011', '2012'];
+  Gcc.locale.update({
+		'TODAY'          : 'Today',
+		'PREVIOUS_MONTH' : 'Previous month',
+		'NEXT_MONTH'     : 'Next month',
+		'SELECT_MONTH'   : 'Select month',
+		'SELECT_YEAR'    : 'Select year',
+		'CLOSE'          : 'Close',
+		'SN'             : 'Sn',
+		'M'              : 'M',
+		'T'              : 'T',
+		'W'              : 'W',
+		'TH'             : 'Th',
+		'F'              : 'F',
+		'S'              : 'S'
+  });
+
+  // init options of dropdown
+  var fnInitOptionsDropdown = function(arr, el, sValue) {
+    var oSelect = $(el), aOptions = $A(oSelect.options);
+    // clear all options
+    aOptions.each(function(option, index) {
+        oSelect.options[index] = null;
+    });
+    // add new options
+    $A(arr).each(function(itemOption, itemIndex) {
+        oSelect.options[itemIndex] = new Option(itemOption, itemOption);
+        if(itemOption == sValue) {
+            oSelect.options[itemIndex].selected = true;
+        }
+    });
+  };
+
+  // init different day numbers for selected month/year option
+  var fnInitScheduleDateDropdown = function(date, el, sFlag) {
+    var arrData, selectedValue;
+    if(sFlag.toLowerCase() == 'year') {
+        arrData = aYearGroups;
+        selectedValue = date.getFullYear().toString();
+    } else {
+        arrData = $R(1, date.getDaysInMonth());
+        selectedValue = date.format('j');
+    }
+
+    if(el instanceof Array) {
+        el.each(function(item) {
+            fnInitOptionsDropdown(arrData, item, selectedValue);
+        });
+    } else {
+        fnInitOptionsDropdown(arrData, el, selectedValue);
+    }
+  };
+
+  // onchange event of dropdown
+  var onEventDropdown = function(el, sFlag) {
+    var date, elMonth, elDay, elYear;
+    if(sFlag.toLowerCase() == 'year') {
+        elYear = $(el);
+        elDay = elYear.up().previous().down('select');
+        elMonth = elDay.up().previous().down('select');
+    } else {
+        elMonth = $(el);
+        elDay = elMonth.up().next().down('select');
+        elYear = elDay.up().next().down('select');
+    }
+    date = new Date(elMonth.value + '/' + elDay.value + '/' + elYear.value);
+    fnInitScheduleDateDropdown(date, elDay, 'day');
+  };
+
+  document.observe('dom:loaded', function() {
+      // add onchange event
+      var monthEl = $('schedule-month'), yearEl = $('schedule-year');;
+      monthEl.observe('change', onEventDropdown.bind(this, monthEl, 'month'));
+	  yearEl.observe('change', onEventDropdown.bind(this, yearEl, 'year'));
+
+      // init DatePicker UI
+      var dp = new Gcc.DatePicker({
+		  currentDate : new Date(),
+		  months : Date.monthNames,
+          years  : aYearGroups
+      });
+      dp.init('datepicker-start-date');
+  });
+// ]]>
+</script>
+</head>
+
+<body>
+
+  <!-- START DatePicker Html Markup -->
+  <div class="popup-wrap" style="font-size: 90%;">
+	<span id="wrap_month1" class="lt-align1">
+		<select name="schedule-month" id="schedule-month" class="schedule-select-short">
+		  <option value="1">January</option>
+		  <option value="2">February</option>
+		  <option value="3">March</option>
+		  <option value="4">April</option>
+		  <option value="5">May</option>
+		  <option value="6">June</option>
+		  <option value="7">July</option>
+		  <option value="8">August</option>
+		  <option value="9">September</option>
+		  <option value="10">October</option>
+		  <option value="11">November</option>
+		  <option value="12">December</option>
+		</select>
+	</span>
+	<span id="wrap_day1" class="lt-align1">
+		<select name="schedule-day" id="schedule-day" class="schedule-select-short1">
+		  <option value="1">1</option>
+		  <option value="2">2</option>
+		  <option value="3">3</option>
+		  <option value="4">4</option>
+		  <option value="5">5</option>
+		  <option value="6">6</option>
+		  <option value="7">7</option>
+		  <option value="8">8</option>
+		  <option value="9">9</option>
+		  <option value="10">10</option>
+		  <option value="11">11</option>
+		  <option value="12">12</option>
+		  <option value="13">13</option>
+		  <option value="14">14</option>
+		  <option value="15">15</option>
+		  <option value="16">16</option>
+		  <option value="17">17</option>
+		  <option value="18">18</option>
+		  <option value="19">19</option>
+		  <option value="20">20</option>
+		  <option value="21">21</option>
+		  <option value="22">22</option>
+		  <option value="23">23</option>
+		  <option value="24">24</option>
+		  <option value="25">25</option>
+		  <option value="26">26</option>
+		  <option value="27">27</option>
+		  <option value="28">28</option>
+		  <option value="29">29</option>
+		  <option value="30">30</option>
+		  <option value="31">31</option>
+		</select>
+	</span>
+	<span id="wrap_year1" class="lt-align1">
+		<select name="schedule-year" id="schedule-year" class="schedule-select-short1">
+		  <option value="2009">2009</option>
+		  <option value="2010">2010</option>
+		  <option value="2011">2011</option>
+		  <option value="2012">2012</option>
+		</select>
+	</span>
+	<img src="../../resources/images/s.gif" alt="date picker" title="date picker" id="datepicker-start-date" class="btn-datepicker" />
+  </div>
+  <!-- END DatePicker Html Markup -->
+		  
+</body>
+</html>
