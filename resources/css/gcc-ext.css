@@ -1,4 +1,4 @@
-body { margin: 5px 5px 0 5px;padding: 0;position: relative;font-size: small;background-color: #f0eCCf;font-family: Helvetica,Verdana,sans-serif;color: #000; }
+body { margin: 5px 5px 0 5px;padding: 0;position: relative;font-size: small;background-color: #E9EFF4;font-family: Helvetica,Verdana,sans-serif;color: #000; }
 a:link { text-decoration: underline; }
 a:visited,a:hover,a:active { text-decoration: none; }
 .item-clear { clear: both;height: 0;overflow: hidden; }
@@ -46,8 +46,8 @@ img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;
 			.meeting-remainder a.past { color: #000; }
 		.cal-nav span,.cal-scroll-wrap span { float: right;margin-right: 4px;width: 10px;height: 6px;background: url(../images/icon-arrows-sprite.gif) no-repeat 0 0; }
 		.cal-nav ul { clear: both;margin: 0;padding: 0;list-style-type: none; }
-			.cal-nav ul li { float: left;height: 18px;border: 1px solid #fff;color: #fff;cursor: pointer;overflow: hidden; }
-			html>body .cal-nav ul li { float: left;height: 18px;border: 1px solid #fff;color: #fff;background: #345385 url(../images/bg-subtab-light.png) repeat-x;cursor: pointer; }
+			.cal-nav ul li { float: left;height: 18px;border: 1px solid #1C67AB;color: #fff;cursor: pointer;overflow: hidden; }
+			html>body .cal-nav ul li { float: left;height: 18px;border: 1px solid #1C67AB;color: #fff;background: #345385 url(../images/bg-subtab-light.png) repeat-x;cursor: pointer; }
 				.cal-nav ul li.arrow-wrap { width: 20px; }
 					.cal-nav span.arrow-lt,.cal-nav span.arrow-rt { margin-top: 3px;width: 6px;height: 10px; }
 					.cal-nav span.arrow-lt { margin-right: 8px;background-position: 0 -7px; }
@@ -77,8 +77,8 @@ img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;
 		.dp-wrap .cal-nav-info { font-size: 80%;color: #000; }
 			.dp-wrap .cal-nav-info a { font-size: 101%;margin-right: 5px; }
 		.dp-wrap .cal-pane-wrap { margin-top: 6px; }
-			ul.cal-pane-hd { margin: 0;padding: 0;list-style-type: none;border: 1px solid #fff;height: 16px; }
-            html>body ul.cal-pane-hd { margin: 0;padding: 0;list-style-type: none;border: 1px solid #fff;height: 16px;background: #345385 url(../images/bg-subtab-light.png) repeat-x; }
+			ul.cal-pane-hd { margin: 0;padding: 0;list-style-type: none;border: 1px solid #1C67AB;height: 16px; }
+            html>body ul.cal-pane-hd { margin: 0;padding: 0;list-style-type: none;border: 1px solid #1C67AB;height: 16px;background: #345385 url(../images/bg-subtab-light.png) repeat-x; }
 				ul.cal-pane-hd li { float: left;width: 25px;line-height: 16px;color: #fff;text-align: center;font-size: 80%; }
 			.dp-wrap .cal-pane-wrap .cal-pane-bd { border: 1px solid #999;border-top: 0;background-color: #ffc;padding-top: 5px;padding-bottom: 4px; }
 				table.dp-grid { width: 100%;border-collapse: collapse; }
