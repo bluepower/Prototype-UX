@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Locale Example</title>
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-example.css" />
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-window.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-window.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	var localeData = {
+		'en-us': {
+			'GUI_TITLE': 'Feedback Dialog',
+			'GUI_OK': 'Yes, I know it.',
+			'GUI_CLOSE': 'Click here to close dialog',
+			'GUI_CONTENT': 'You choose English locale.'
+		},
+		'zh-cn': {
+			'GUI_TITLE': '反馈信息对话框',
+			'GUI_OK': '好的，了解。',
+			'GUI_CLOSE': '点此关闭对话框',
+			'GUI_CONTENT': '您选择了简体中文语言。'
+		}
+	};
+
+	document.observe('dom:loaded', function() {
+		var oChooseLocale = $('choose-locale');
+		if(oChooseLocale) {
+			oChooseLocale.observe('change', function() {
+				var sLocale = oChooseLocale.value.toLowerCase(),
+					oLocale = localeData[sLocale];
+				if(oLocale) {
+					Gcc.locale.update(oLocale);
+
+					Gcc.showAlert(Gcc.locale.get('GUI_CONTENT'), null, {
+						title: Gcc.locale.get('GUI_TITLE'),
+						okLabel: Gcc.locale.get('GUI_OK'),
+						okTooltip: Gcc.locale.get('GUI_OK'),
+						closeTooltip: Gcc.locale.get('GUI_CLOSE')
+					});
+				}
+			});
+		}
+	});
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2>Locale Popup</h2>
+<div class="playground">
+	<select id="choose-locale" name="choose-locale">
+	  <option value="none">Please choose one locale</option>
+	  <option value="en-us">English</option>
+	  <option value="zh-cn">Chinese</option>
+	</select>
+</div>
+
+</body>
+</html>
