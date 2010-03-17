@@ -13,6 +13,7 @@
 
 <script type="text/javascript">
 // <![CDATA[
+
 	document.observe('dom:loaded', function() {
 		$$('select.combo-box').each(function(item) {
 			new Gcc.ComboBox(item, {
@@ -25,6 +26,7 @@
 	var onEvtChange = function(obj) {
 		Gcc.showAlert('You click ComboBox which contains ' + obj.options.length + ' options.');
 	};
+
 // ]]>
 </script>
 </head>
