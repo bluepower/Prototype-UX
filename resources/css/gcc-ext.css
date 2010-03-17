@@ -3,6 +3,14 @@ a:link { text-decoration: underline; }
 a:visited,a:hover,a:active { text-decoration: none; }
 .item-clear { clear: both;height: 0;overflow: hidden; }
 
+.selectbox-wrapper { position: absolute;z-index: 1000;width: 400px;background-color: #fff;border:1px solid #1C67AB;margin: 0;padding: 0;font-size: 85%;text-align: left;height: auto;overflow: auto; }
+.selectbox-wrapper ul { list-style-type: none;margin: 0;padding: 0; }
+.selectbox-wrapper ul li { list-style-type: none;display: block;margin: 0;padding: 2px;cursor: pointer;font-family: Helvetica,Verdana,sans-serif;font-size: 90%; }
+.selectbox-wrapper ul li.selected { background-color: #345385;color: #FFFFFF; }
+.selectbox-wrapper ul li.current { background-color: #1C67AB;color: #FFFFFF; }
+.selectbox { margin: 0 5px 10px 0;height: 16px;padding-right: 16px;font-family: Helvetica,Verdana,sans-serif;font-size: 90%;display: block;text-align: left;background: url(../images/icon-trigger-sprite.gif) no-repeat;background-color: #fff;background-position: right 0;cursor: pointer;border: 1px solid #7F9DB9;color: #000080; }
+.combo-hover { background-position: right -18px; }
+
 .popup-wrap { padding: 4px 10px 10px 10px; }
 	.popup-wrap .txt-field { clear: both; }
 	.popup-wrap .group-btns { clear: both;margin-top: 10px; }
@@ -36,8 +44,6 @@ img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;
 			.meeting-remainder span { float: left;width: 30px;font-size: 80%;text-align: right; }
 			.meeting-remainder a.meeting { float: left;margin-left: 5px;padding: 0;width: 90px;height: 12px;font-size: 80%;text-decoration: underline;white-space: nowrap;overflow: hidden;color: #1C67AB; }
 			.meeting-remainder a.past { color: #000; }
-
-		/* CSS Sprites for arrows */
 		.cal-nav span,.cal-scroll-wrap span { float: right;margin-right: 4px;width: 10px;height: 6px;background: url(../images/icon-arrows-sprite.gif) no-repeat 0 0; }
 		.cal-nav ul { clear: both;margin: 0;padding: 0;list-style-type: none; }
 			.cal-nav ul li { float: left;height: 18px;border: 1px solid #fff;color: #fff;cursor: pointer;overflow: hidden; }

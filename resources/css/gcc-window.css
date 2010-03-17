@@ -1,6 +1,6 @@
 /* default styles for Gcc window */
-.overlay_dialog { background-color: #666666;filter: alpha(opacity=60);-moz-opacity: 0.6;opacity: 0.6; }
-.overlay___invisible__ { background-color: #666666;filter: alpha(opacity=0);-moz-opacity: 0;opacity: 0; }
+.overlay_dialog { background-color: #666;filter: alpha(opacity=60);-moz-opacity: 0.6;opacity: 0.6; }
+.overlay___invisible__ { background-color: #666;filter: alpha(opacity=0);-moz-opacity: 0;opacity: 0; }
 .dialog_nw,.dialog_ne { width: 9px;height: 23px; }
 .dialog_n { height: 23px; }
 .dialog_e,.dialog_w { width: 2px; }
@@ -41,8 +41,8 @@
 .demeter_message { padding-top: 5px;padding-left: 5px; }
 .demeter_buttons { clear: both;text-align: center; }
 .btn_alert { height: 20px;border: 0;color: #1C67AB;text-decoration: underline;font: bold 11px Helvetica, Verdana, sans-serif;text-align: left; }
-.ok_button { padding-left: 22px;background: url(../images/bg-btn-ok.gif) no-repeat; }
-.cancel_button { margin-left: 5px;padding-left: 22px;background: url(../images/bg-btn-cancel.gif) no-repeat; }
+.ok_button { padding-left: 22px;background: url(../images/icon-btn-ok.gif) no-repeat; }
+.cancel_button { margin-left: 5px;padding-left: 22px;background: url(../images/icon-btn-cancel.gif) no-repeat; }
 .ico_question { background: url(../images/icon-question.gif) no-repeat 3px 0; }
 .ico_info { background: url(../images/icon-info.gif) no-repeat 3px 0; }
 .ico_warning { background: url(../images/icon-warning.png) no-repeat 3px 0; }
