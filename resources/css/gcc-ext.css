@@ -11,6 +11,10 @@ a:visited,a:hover,a:active { text-decoration: none; }
 .selectbox { margin: 0 5px 10px 0;height: 16px;padding-right: 16px;font-family: Helvetica,Verdana,sans-serif;font-size: 90%;display: block;text-align: left;background: url(../images/icon-trigger-sprite.gif) no-repeat;background-color: #fff;background-position: right 0;cursor: pointer;border: 1px solid #7F9DB9;color: #000080; }
 .combo-hover { background-position: right -18px; }
 
+.tip-import-hover { position: absolute;top: 0;left: 0;z-index: 100;width: 520px;height: 106px;padding-left: 20px;padding-right: 10px;background: #ffc url(../images/icon-tip.gif) no-repeat 0 5px;border: 1px solid #fc0;font: normal 100% Helvetica, Verdana, sans-serif; }
+	.tip-import-hover p { margin: 0;padding: 3px;color: #1c67ab; }
+	.tip-import-hover p.highlight { background-color: #fff;color: #000; }
+
 .popup-wrap { padding: 4px 10px 10px 10px; }
 	.popup-wrap .txt-field { clear: both; }
 	.popup-wrap .group-btns { clear: both;margin-top: 10px; }
@@ -28,6 +32,9 @@ a:visited,a:hover,a:active { text-decoration: none; }
 a.btn-delete { background: url(../images/icon-delete-sprite.gif) no-repeat 0 0; }
 img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;cursor: pointer;background: url(../images/icon-date-picker.gif) no-repeat; }
 
+.tip-item { float: left;margin-left: 2px;width: 20px;height: 20px;background: url(../images/icon-tip.gif) no-repeat top left; }
+.tip-item-hover { position: absolute;top: 0;left: 0;z-index: 100;width: 460px;height: auto;padding-left: 20px;padding-right: 10px;background: #ffc url(../images/icon-tip.gif) no-repeat 0 5px;border: 1px solid #fc0;font: normal 11px Helvetica, Verdana, sans-serif; }
+	.tip-item-hover p { margin: 0;padding: 3px;color: #1c67ab; }
 .image-logo-display { margin-top: 25px;text-align: center; }
     .image-logo-display img { cursor: pointer; }
 

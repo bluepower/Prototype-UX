@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tooltip Example</title>
+<link href="../../resources/css/gcc-example.css" rel="stylesheet" type="text/css" />
+<link href="../../resources/css/gcc-ext.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	document.observe('dom:loaded', function() {
+		Gcc.setTooltip('tip_display');
+		Gcc.setTooltip('tip_import');
+	});
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2>Simple Tooltip</h2>
+<div class="playground">
+	<button id="tip_display" style="float: left;">Hover to view tooltip</button>
+	<span id="tip_import" class="tip-item"></span>
+	<div class="item-clear"></div>
+</div>
+
+  <!-- /////////////////////////// START Html Markups for Tooltip /////////////////////////// -->
+  <div id="tip_display_hover" class="tip-item-hover" style="width: 240px;display: none;">
+    <p>
+	  Images to be displayed as logos in the application should be a minimum of 202x135 pixels. Larger images will be resized to fit. Supported image types are .jpg, .gif, .png.	
+	</p>
+  </div>
+  <div id="tip_import_hover" class="tip-import-hover" style="font-size: 85%;display: none;">
+    <p>
+	  Only CSV File format is accepted. The individual fields must be structured in the order shown in the sample below and must be separated by commas. A header row is also required.
+    </p>
+    <p class="highlight">
+	  First Name,Last Name,Email Address,Business Phone,Home Phone,Mobile Phone Paul,Hill,paul.hill@abc.com,416-123-4567x423,905-765-4321,416-231-4567 
+    </p>
+    <p>
+	  For more details on how to format your file, or how to export your personal address book, please click on the Help link above.
+    </p>
+  </div>
+  <!-- /////////////////////////// END Html Markups for Tooltip /////////////////////////// -->
+
+</body>
+</html>
