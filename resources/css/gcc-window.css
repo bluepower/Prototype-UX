@@ -26,12 +26,12 @@
 /* customize theme styles for Gcc window */
 .alert_content { padding-left: 7px;padding-top: 10px;width: 296px;height: 55px;color: #000080;font: bold 13px Verdana, Helvetica, sans-serif;background: url(../images/bg-dialog-info.gif) no-repeat; }
 .overlay_demeter { background-color: #85BBEF;filter: alpha(opacity=50);-moz-opacity: 0.5;opacity: 0.5; }
-.demeter_nw { background: #1C67AB url(../images/blank.gif) no-repeat top left;width: 1px;height: 24px; }
-.demeter_ne { background: #1C67AB url(../images/blank.gif) no-repeat top right;width: 1px;height: 24px; }
+.demeter_nw { background: #1C67AB url(../images/icon-blank.gif) no-repeat top left;width: 1px;height: 24px; }
+.demeter_ne { background: #1C67AB url(../images/icon-blank.gif) no-repeat top right;width: 1px;height: 24px; }
 .demeter_w,.demeter_e { background-color: #1C67AB;width: 1px; }
-.demeter_sw { background: #1C67AB url(../images/blank.gif) no-repeat left bottom;width: 9px;height: 2px; }
+.demeter_sw { background: #1C67AB url(../images/icon-blank.gif) no-repeat left bottom;width: 9px;height: 2px; }
 .demeter_s { background-color: #1C67AB;height: 2px; }
-.demeter_se,.demeter_sizer { background: #1C67AB url(../images/blank.gif) no-repeat right bottom;width: 9px;height: 2px; }
+.demeter_se,.demeter_sizer { background: #1C67AB url(../images/icon-blank.gif) no-repeat right bottom;width: 9px;height: 2px; }
 .demeter_sizer { cursor: se-resize; }
 .demeter_close { width: 15px;height: 15px;background: transparent url(../images/icon-btn-close.gif) no-repeat 0 0;position: absolute;top: 4px;right: 5px;cursor: pointer;z-index: 1000; }
 .demeter_minimize { width: 15px;height: 15px;background: transparent url(../images/icon-btn-minimize.gif) no-repeat 0 0;position: absolute;top: 4px;right: 24px;cursor: pointer;z-index: 1000; }
