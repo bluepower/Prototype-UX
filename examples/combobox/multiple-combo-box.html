@@ -14,18 +14,24 @@
 <script type="text/javascript">
 // <![CDATA[
 
+	var onEvtChange = function(obj) {
+		Gcc.showAlert(
+			'You click ComboBox which contains ' + obj.options.length + ' options.<br />' +
+			'You selected "' + obj.options[obj.selectedIndex].text.truncate(32) + '".'
+		);
+	};
+
 	document.observe('dom:loaded', function() {
 		$$('select.combo-box').each(function(item) {
+			//item.observe('change', onEvtChange.bind(this, item));
+			item.onchange = onEvtChange.bind(this, item);
+
 			new Gcc.ComboBox(item, {
 				width: 200,
 				trim: 32
 			}).init();
-		});
+		}.bind(this));
 	});
-
-	var onEvtChange = function(obj) {
-		Gcc.showAlert('You click ComboBox which contains ' + obj.options.length + ' options.');
-	};
 
 // ]]>
 </script>
@@ -35,7 +41,7 @@
 
 	  <form id="forms" method="GET">
         <!-- START Html Markups -->
-        <select class="combo-box" name="combobox" onchange="onEvtChange(this)">
+        <select class="combo-box" name="combobox">
             <option value="1">option1option1option1option1option1</option>
             <option value="2" selected="selected">option2option2</option>
             <option value="3">option3option3option3</option>
@@ -48,7 +54,7 @@
 		<input type="button" value="button1" style="visibility: hidden;"/>
 
         <!-- START Html Markups -->
-        <select class="combo-box" name="combobox" style="margin-top: 50px;" onchange="onEvtChange(this)">
+        <select class="combo-box" name="combobox" style="margin-top: 50px;">
             <option value="1">option1option1option1option1option1</option>
             <option value="2">option2option2</option>
             <option value="3" selected="selected">option3option3option3</option>
@@ -58,7 +64,7 @@
 		<input type="button" value="button2" style="visibility: hidden;" />
 
         <!-- START Html Markups -->
-        <select class="combo-box" name="combobox" style="margin-top: 50px;" onchange="onEvtChange(this)">
+        <select class="combo-box" name="combobox" style="margin-top: 50px;">
             <option value="1" selected="selected">option1option1option1option1option1</option>
             <option value="2">option2option2</option>
         </select>
