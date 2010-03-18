@@ -104,3 +104,12 @@ img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;
                 .cal-pane-ft a:hover { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
                 .cal-pane-ft a:active { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: none; }
                 .cal-pane-ft a.btn-small-close { background: url(../images/icon-btn-small-close.gif) no-repeat; }
+
+.comment-msg-wrap { clear: both;margin-top: 15px; }
+    .comment-msg-wrap span.lt { float: left; }
+    .comment-msg-wrap span.rt { float: right; }
+    .comment-msg-wrap textarea { width: 324px;height: 75px;font-size: 100%;font-family: Helvetica,Verdana,sans-serif; }
+.resource-wrap { clear: both; }
+    .resource-wrap .comment-msg-wrap { margin-top: 12px;width: 284px; }
+    .resource-wrap .comment-msg-wrap span.rt { font-weight: bold; }
+    .resource-wrap .comment-msg-wrap textarea { width: 280px; }

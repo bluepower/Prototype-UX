@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Char Counter Example</title>
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-example.css" />
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-ext.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	document.observe('dom:loaded', function() {
+		Gcc.setCharCount('description', 'description_count', 256);
+	});
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2>Char Counter</h2>
+<div class="playground">
+  <div class="resource-wrap">
+	<div class="comment-msg-wrap">
+	  <span class="lt">Edit Comments and Messages:</span>
+	  <span class="rt" id="description_count"></span>
+	  <div class="item-clear"></div>
+	  <textarea name="description" id="description"></textarea>
+	</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
