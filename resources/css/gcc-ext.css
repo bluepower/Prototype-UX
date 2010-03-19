@@ -2,6 +2,7 @@ body { margin: 5px 5px 0 5px;padding: 0;position: relative;font-size: small;back
 a:link { text-decoration: underline; }
 a:visited,a:hover,a:active { text-decoration: none; }
 .item-clear { clear: both;height: 0;overflow: hidden; }
+.use-shim { position: absolute;visibility: hidden;left: 0;top: 0;overflow: hidden; }
 
 .preview-title { float: left;width: 350px;overflow: hidden;white-space: nowrap; }
 .popup-main-hd-content { height: 35px;text-align: center; }

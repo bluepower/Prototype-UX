@@ -3,7 +3,8 @@
 <head>
 <meta http-equiv="Content-Language" content="en" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ComboBox with Tooltip title Example</title>
+<title>ComboBox with Tooltip Example</title>
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-example.css" />
 <link type="text/css" rel="stylesheet" href="../../resources/css/gcc-ext.css" />
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
@@ -26,6 +27,8 @@
 
 <body>
 
+<h2 class="item-top">Simple ComboBox</h2>
+<div class="playground">
 	  <form id="forms" method="GET">
         <!-- START Html Markups -->
         <select id="combobox" name="combobox" tabindex="2">
@@ -37,8 +40,13 @@
             <option value="6">option6option6option6option6option6option6option6option6option6option6option6</option>
         </select>
         <!-- END Html Markups -->
+		<select name="ie6-test">
+		  <option>Test IE6 iframe shim</option>
+		</select>
+		<p>&nbsp;</p>
 		<input type="submit" />
 	  </form>
+</div>
 
 </body>
 </html>
