@@ -3,6 +3,18 @@ a:link { text-decoration: underline; }
 a:visited,a:hover,a:active { text-decoration: none; }
 .item-clear { clear: both;height: 0;overflow: hidden; }
 
+.preview-title { float: left;width: 350px;overflow: hidden;white-space: nowrap; }
+.popup-main-hd-content { height: 35px;text-align: center; }
+.popup-main-bd { margin-top: 10px;/*width: 386px;*/height: 320px;font-family: Helvetica,Verdana,sans-serif;overflow: auto;overflow-x: hidden; }
+	.popup-main-bd h3 { margin: 0;font-weight: bold;word-wrap:break-word;overflow:hidden; }
+	.item-list { padding-top: 3px;padding-bottom: 15px;color: #1C67AB;border-top: 1px solid #999; }
+		.item-list .item-list-hd { color: #000;text-indent: 6px; }
+		.item-list .item-list-bd { padding-left: 10px;text-align: left; }
+			.item-list .item-list-bd ul { margin: 0;padding: 0;list-style-type: none; }
+			.item-list-label { float: left;margin: 2px 0 0 0;width: 300px;word-wrap:break-word;overflow:hidden;line-height: 16px; }
+	.popup-main-bd input, .popup-main-bd select { margin-left: 8px;font-size: 100%; }
+.popup-main-ft-content { height: 20px;text-align: right; }
+
 .errorinput { border: 1px solid #f00;background-color: #fef6f8; }
 .errorlabel { clear: both;color: #f00;font-size: 90%;text-align: left; }
 #errorcontainer, .error-container { margin: 0 1px;padding: 1px;background-color: #fef6f8;border: 1px solid #f00;color: #f00; }
@@ -18,8 +30,8 @@ img.small-warning { float: left;margin-right: 3px;width: 16px;height: 16px;backg
 .selectbox-wrapper { position: absolute;z-index: 1000;width: 400px;background-color: #fff;border:1px solid #1C67AB;margin: 0;padding: 0;font-size: 85%;text-align: left;height: auto;overflow: auto; }
 .selectbox-wrapper ul { list-style-type: none;margin: 0;padding: 0; }
 .selectbox-wrapper ul li { list-style-type: none;display: block;margin: 0;padding: 2px;cursor: pointer;font-family: Helvetica,Verdana,sans-serif;font-size: 90%; }
-.selectbox-wrapper ul li.selected { background-color: #345385;color: #FFFFFF; }
-.selectbox-wrapper ul li.current { background-color: #1C67AB;color: #FFFFFF; }
+.selectbox-wrapper ul li.selected { background-color: #345385;color: #fff; }
+.selectbox-wrapper ul li.current { background-color: #1C67AB;color: #fff; }
 .selectbox { margin: 0 5px 10px 0;height: 16px;padding-right: 16px;font-family: Helvetica,Verdana,sans-serif;font-size: 90%;display: block;text-align: left;background: url(../images/icon-trigger-sprite.gif) no-repeat;background-color: #fff;background-position: right 0;cursor: pointer;border: 1px solid #7F9DB9;color: #000080; }
 .combo-hover { background-position: right -18px; }
 

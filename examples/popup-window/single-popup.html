@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Language" content="en" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Mixed Popups Example</title>
+<title>Single Popup Example</title>
 <link type="text/css" rel="stylesheet" href="../../resources/css/gcc-example.css" />
 <link type="text/css" rel="stylesheet" href="../../resources/css/gcc-window.css" />
 <link type="text/css" rel="stylesheet" href="../../resources/css/gcc-ext.css" />
@@ -15,39 +15,15 @@
 <script type="text/javascript">
 // <![CDATA[
 
-	var fnShowAlert = function() {
-		Gcc.showAlert('test content test content test content test content');
-	};
-
-	var fnShowConfirm = function() {
-		Gcc.showConfirm('test content test content test content test content test content test content', function() {
-			Gcc.showAlert('evoke callback function', function() {
-				Windows.closeAll();
-			});
-		});
-	};
-
-	var fnShowPrompt = function() {
-		var sHtml = '<div class="msg_container">' + 
-					  'test content test content<br /><input type="text" value="" style="width: 260px;" /><br /><br />' + 
-					'</div>';
-	    Dialog.confirm(sHtml, {
-			title: 'System Prompt',
-			className: 'demeter',
-			buttonClass: 'btn_alert',
-			width: 280,
-			draggable: true,
-			closable: true,
-			showEffect: Element.show,
-			hideEffect: Element.hide
-		});
-	};
-
 	var fnShowWindow = function() {
 		Gcc.showWindow('preview_popup', {
 			title: 'Preview: Survey One',
 			width: 400,
-			height: 450
+			height: 450,
+			wiredDrag: false,
+			resizable: true,
+			minimizable: true,
+			maximizable: true
 		});
 	};
 
@@ -57,27 +33,9 @@
 
 <body>
 
-<h2 class="item-top">1. Popup Alert</h2>
+<h2 class="item-top">Single Popup Window</h2>
 <div class="playground">
-	<button onclick="fnShowAlert()">Show Popup Alert Div</button>
-	(auto height)
-</div>
-
-<h2>2. Popup Confirm</h2>
-<div class="playground">
-	<button onclick="fnShowConfirm()">Show Popup Confirm Div</button>
-	(auto height)
-</div>
-
-<h2>3. Popup Prompt</h2>
-<div class="playground">
-	<button onclick="fnShowPrompt()">Show Popup Prompt Div</button>
-	(auto height)
-</div>
-
-<h2>4. Popup Window</h2>
-<div class="playground">
-	<button onclick="fnShowWindow()">Show Popup Window Div</button>
+	<button onclick="fnShowWindow()">Show Popup Window</button>
 	(Support ESC key)
 </div>
 
