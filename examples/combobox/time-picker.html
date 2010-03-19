@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TimePicker Example</title>
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-example.css" />
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-ext.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	var a12HourTimes = ['12:00 AM', '12:30 AM', '01:00 AM', '01:30 AM', '02:00 AM', '02:30 AM', '03:00 AM', '03:30 AM', '04:00 AM', '04:30 AM', '05:00 AM', '05:30 AM', '06:00 AM', '06:30 AM', '07:00 AM', '07:30 AM', '08:00 AM', '08:30 AM', '09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '01:00 PM', '01:30 PM', '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM', '04:00 PM', '04:30 PM', '05:00 PM', '05:30 PM', '06:00 PM', '06:30 PM', '07:00 PM', '07:30 PM', '08:00 PM', '08:30 PM', '09:00 PM', '09:30 PM', '10:00 PM', '10:30 PM', '11:00 PM', '11:30 PM'];
+
+	// init options of dropdown
+	var fnInitOptionsDropdown = function(arr, el, value) {
+		var oSelect = $(el), aOptions = $A(oSelect.options);
+		// clear all options
+		if(aOptions.size() > 0) {
+			aOptions.each(function(option, index) {
+				oSelect.options[index] = null;
+			});
+		}
+		// add new options
+		$A(arr).each(function(itemOption, itemIndex) {
+			oSelect.options[itemIndex] = new Option(itemOption, itemOption);
+			if(itemOption == value) {
+				oSelect.selectedIndex = itemIndex;
+			}
+		});
+	};
+
+	document.observe('dom:loaded', function() {		
+		fnInitOptionsDropdown(a12HourTimes, 'schedule-time', '');
+
+		var combo = new Gcc.ComboBox('schedule-time', {
+            width: 70,
+            dropdownHeight: 200,
+            readOnly: false,
+            inputMaxLength: 9
+		});
+		combo.init();
+	});
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2 class="item-top">TimePicker UI - time input/edit combo box</h2>
+<div class="playground">
+  <select name="schedule-time" id="schedule-time" class="schedule-select-short"></select>
+
+  <select name="ie6-test">
+    <option>Test IE6 iframe shim</option>
+  </select>
+</div>
+
+</body>
+</html>
