@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>IFrame Popup Example</title>
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-example.css" />
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-window.css" />
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-ext.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-window.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	var fnShowWindow = function() {
+		Gcc.baseURL = '';
+		Gcc.webContext = '';
+
+		Gcc.showIframePopup({
+			title: 'IFrame Popup Example',
+			uri: 'http://www.google.com',
+			width: 600,
+			height: 450
+		});
+	};
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2 class="item-top">IFrame Popup Window</h2>
+<div class="playground">
+	<button onclick="fnShowWindow()">Show IFrame Popup</button>
+</div>
+
+</body>
+</html>
