@@ -1,3 +1,7 @@
+if(typeof Gcc == 'undefined' || !Gcc) {
+	Gcc = {};
+}
+
 /**
  * @class Gcc.Showcase
  * @author Niko Ni
@@ -20,15 +24,23 @@ Gcc.Showcase = Class.create({
 	},
 
 	initMarkup : function() {
+		var ctHtml = '';
+
+		this.initTemplates();
+
 		this.items.each(function(item, index) {
 			item.id = 'sample-' + index;
-		});
+			ctHtml += this.ctTpl.evaluate({
+				id: item.id,
+				title: item.title
+			});
+		}.bind(this));
 
 		this.menu = $(this.opt['menuEl']) || $('sample-menu-inner');
 		this.ct = $(this.opt['contentEl']) || $('sample-box-inner');
 		this.cb = $(this.opt['controlBarEl']) || $('samples-cb');
-
-		this.initTemplates();
+		
+		this.ct.update(ctHtml);
 	},
 
 	initEvents : function() {
@@ -56,7 +68,21 @@ Gcc.Showcase = Class.create({
 		this.activate(this.items[0].id);
 	},
 
-	initTemplates : function() {
+	initTemplates : function() {		
+		this.ctTpl = new Template(
+			'<div id="sample-ct"><div>' +
+			  '<a name="#{id}" id="#{id}"><h2><div unselectable="on">#{title}</div></h2>' +
+			  '<dl id="sample-ct-#{id}"></dl>' +
+			'</div></div>'
+		);
+
+		this.ctItemTpl = new Template(
+			'<dd ext:url="#{url}">' +
+			  '<img title="#{text}" src="assets/#{icon}" />' +
+			  '<div><h4>#{text}</h4><p>#{desc}</p></div>' +
+			'</dd>'
+		);
+
 		//@TODO
 	},
 
