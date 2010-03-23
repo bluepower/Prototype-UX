@@ -6,7 +6,7 @@ if(typeof Gcc == 'undefined' || !Gcc) {
  * @class Gcc.Showcase
  * @author Niko Ni
  * @create 2010-03-21
- * @update 2010-03-22
+ * @update 2010-03-23
  */
 Gcc.Showcase = Class.create({
 	/**
