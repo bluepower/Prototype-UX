@@ -24,7 +24,7 @@ Gcc.Showcase = Class.create({
 	},
 
 	initMarkup : function() {
-		var ctHtml = '';
+		var menuHtml = '', ctHtml = '', ctItemHtml = '';
 
 		this.initTemplates();
 
@@ -34,13 +34,35 @@ Gcc.Showcase = Class.create({
 				id: item.id,
 				title: item.title
 			});
+			menuHtml += this.menuTpl.evaluate({
+				id: item.id,
+				title: item.title				
+			});
 		}.bind(this));
 
 		this.menu = $(this.opt['menuEl']) || $('sample-menu-inner');
 		this.ct = $(this.opt['contentEl']) || $('sample-box-inner');
 		this.cb = $(this.opt['controlBarEl']) || $('samples-cb');
 		
-		this.ct.update(ctHtml);
+		this.ct.update('<div id="sample-ct">' + ctHtml + '</div>');
+
+		this.items.each(function(item) {
+			var container = $('sample-ct-' + item.id);
+			if(container) {
+				item.samples.each(function(sample) {
+					ctItemHtml = this.ctItemTpl.evaluate({
+						text: sample.text,
+						url: sample.url,
+						icon: sample.icon,
+						desc: sample.desc
+					});
+					container.update(container.innerHTML + ctItemHtml);
+				}.bind(this));
+				container.insert('<div class="x-clear"></div>');
+			}
+		}.bind(this));
+
+		this.menu.update(menuHtml);
 	},
 
 	initEvents : function() {
@@ -70,10 +92,10 @@ Gcc.Showcase = Class.create({
 
 	initTemplates : function() {		
 		this.ctTpl = new Template(
-			'<div id="sample-ct"><div>' +
+			'<div>' +
 			  '<a name="#{id}" id="#{id}"><h2><div unselectable="on">#{title}</div></h2>' +
 			  '<dl id="sample-ct-#{id}"></dl>' +
-			'</div></div>'
+			'</div>'
 		);
 
 		this.ctItemTpl = new Template(
@@ -83,7 +105,9 @@ Gcc.Showcase = Class.create({
 			'</dd>'
 		);
 
-		//@TODO
+		this.menuTpl= new Template(
+			'<a href="#" hidefocus="on" id="a4#{id}">#{title}</a>'
+		);
 	},
 
 	calcScrollPosition : function() {

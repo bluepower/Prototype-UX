@@ -158,14 +158,14 @@ a:hover {
 }
 
 #sample-menu a.active {
-    background: transparent url(../images/active-item.png) no-repeat;
+    background: transparent url(active-item.png) no-repeat;
 	text-decoration: none;
 	color:#1860A8;
 	font-weight:bold;
 }
 
 .ext-ie #sample-menu a.active {
-	background: transparent url(../images/active-item.png) no-repeat;
+	background: transparent url(active-item.png) no-repeat;
 	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='active-item.png', sizingMethod='scale') !important;
 }
 

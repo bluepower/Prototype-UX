@@ -120,6 +120,9 @@
 
 	document.observe('dom:loaded', function() {
 		new Gcc.Showcase({
+			menuEl: 'sample-menu-inner',
+			contentEl: 'sample-box-inner',
+			controlBarEl: 'samples-cb',
 			items: catalog
 		});
 	});
