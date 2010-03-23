@@ -66,24 +66,45 @@ Gcc.Showcase = Class.create({
 	},
 
 	initEvents : function() {
-		this.ct.observe('mouseover', function() {
-			//@TODO
+		this.ct.observe('mouseover', function(ev) {
+			var t = ev.findElement('dd');
+			if(t) {
+				t.addClassName('over');
+			}
 		});
-		this.ct.observe('mouseout', function() {
-			//@TODO
+		this.ct.observe('mouseout', function(ev) {
+			var t = ev.findElement('dd');
+			if(t) {
+				t.removeClassName('over');
+			}
 		});
-		this.ct.observe('click', function() {
-			//@TODO
-		});
+		this.ct.observe('click', function(ev) {
+			var item = ev.findElement('dd'),
+				title = ev.findElement('h2');
+			if(item) {
+				var url = item.readAttribute('ext:url');
+				if(url) {
+					window.open(url.indexOf('http') == -1 ? '../../examples/' + url : url);
+				}
+			}
+
+			if(title) {
+				this.toggleClass(title.up('div'), 'collapsed');
+			}
+		}.bind(this));
 
 		this.menu.observe('click', function(ev) {
 			ev.stop();
 			//@TODO
 		});
 
-		this.cb.observe('click', function() {
-			//@TODO
-		});
+		this.cb.observe('click', function(ev) {
+			var img = ev.findElement('img');
+			if(img) {
+				$('samples').className = img.className;
+				//this.calcScrollPosition();
+			}
+		}.bind(this));
 
 		this.bindScroll(true);
 
@@ -128,7 +149,7 @@ Gcc.Showcase = Class.create({
 	},
 
 	bindScroll : function(flag) {
-		var fn = this.calcScrollPosition;
+		var fn = this.calcScrollPosition.bind(this);
 		if(flag) {
 			this.ct.observe('scroll', fn);
 			this.bound = true;
@@ -151,5 +172,15 @@ Gcc.Showcase = Class.create({
             });
             el.addClassName(cls);
         }
-    }
+    },
+
+	toggleClass : function(el, cls) {
+		if(el) {
+			if(el.hasClassName(cls)) {
+				el.removeClassName(cls);
+			} else {
+				el.addClassName(cls);
+			}
+		}
+	}
 });
