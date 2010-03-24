@@ -4,126 +4,134 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="author" content="Niko Ni (bluepspower@163.com)" />
-<title>UI Component Documentation and Examples</title>
+<title>UI Component showcase list</title>
 <link rel="stylesheet" type="text/css" href="assets/example-view.css" />
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.3/scriptaculous.js?load=effects"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+	// for name space
+    if(typeof Gcc == 'undefined' || !Gcc) {
+	    Gcc = {};
+	}
+// ]]>
+</script>
+
 <script type="text/javascript" src="gcc-showcase-list.js"></script>
 
 <script type="text/javascript">
 // <![CDATA[
 
-	// catagory data
-	var catalog = [{
-	    title:'DatePicker Samples',
-	    samples: [{
-		  text: 'DatePicker dropdown',
-		  url : 'datepicker/datepicker-dropdown.html',
-		  icon: 'thumb-datepicker.gif',
-		  desc: 'DatePicker dropdown mode.'
-	    },{
-		  text: 'DatePicker textfield',
-		  url : 'datepicker/datepicker-textfield.html',
-		  icon: 'thumb-datepicker.gif',
-		  desc: 'DatePicker textfield mode.'  
-	    }]
-	},{
-	    title:'ComboBox Samples',
-	    samples: [{
-		  text: 'Basic ComboBox With Tooltip',
-		  url : 'combobox/simple-combo-box.html',
-		  icon: 'thumb-combo.gif',
-		  desc: 'ComboBox with Tooltip in each option.'
-	    },{
-		  text: 'Multiple ComboBox instances',
-		  url : 'combobox/multiple-combo-box.html',
-		  icon: 'thumb-combo.gif',
-		  desc: 'Support Multiple ComboBox instances.'	  
-	    },{
-		  text: 'TimePicker',
-		  url : 'combobox/time-picker.html',
-		  icon: 'thumb-combo.gif',
-		  desc: 'TimePicker ComboBox to edit time.'	  
-	    }]
-	},{
-	    title:'Popup Window Samples',
-	    samples: [{
-		  text: 'Combination Examples',
-		  url : 'popup-window/mixed-popups.html',
-		  icon: 'thumb-popup.gif',
-		  desc: 'Combination Window examples.'
-	    },{
-		  text: 'Single Popup Window',
-		  url : 'popup-window/single-popup.html',
-		  icon: 'thumb-popup.gif',
-		  desc: 'Just a single Popup Window.'
-	    },{
-		  text: 'Custom Alert MessageBox',
-		  url : 'popup-window/customize-alert-message-box.html',
-		  icon: 'thumb-alert.gif',
-		  desc: 'Customized Alert MessageBox.'
-	    },{
-		  text: 'Custom Confirm MessageBox',
-		  url : 'popup-window/customize-confirm-message-box.html',
-		  icon: 'thumb-popup.gif',
-		  desc: 'Customized Confirm MessageBox.'
-	    },{
-		  text: 'Alert MessageBox',
-		  url : 'popup-window/alert-message-box.html',
-		  icon: 'thumb-alert.gif',
-		  desc: 'Look and feel like Alert MessageBox.'
-	    },{
-		  text: 'Confirm MessageBox',
-		  url : 'popup-window/confirm-message-box.html',
-		  icon: 'thumb-popup.gif',
-		  desc: 'Look and feel like Confirm MessageBox.'
-	    },{
-		  text: 'Dialog Info',
-		  url : 'popup-window/dialog-info.html',
-		  icon: 'thumb-popup.gif',
-		  desc: 'Show info in a dialog.'
-	    },{
-		  text: 'IFrame popup',
-		  url : 'popup-window/iframe-popup.html',
-		  icon: 'thumb-popup.gif',
-		  desc: 'Show popup window with iframe.'
-	    }]
-	},{
-	    title:'More Samples',
-	    samples: [{
-		  text: 'Error Messaging',
-		  url : 'error-container/error-messaging.html',
-		  icon: 'thumb-error.gif',
-		  desc: 'Show Error Container.'
-	    },{
-		  text: 'Basic Tooltip',
-		  url : 'tooltip/simple-tooltip.html',
-		  icon: 'thumb.gif',
-		  desc: 'Show simple tooltip.'
-	    },{
-		  text: 'Dynamic Locale',
-		  url : 'locale/locale-dropdown.html',
-		  icon: 'thumb.gif',
-		  desc: 'Show dynamic locale from dropdown.'
-	    },{
-		  text: 'Image Preview',
-		  url : 'image-preview/simple-image-preview.html',
-		  icon: 'thumb.gif',
-		  desc: 'Show simple image preview.'
-	    },{
-		  text: 'Char Counter',
-		  url : 'char-counter/simple-char-counter.html',
-		  icon: 'thumb.gif',
-		  desc: 'Show char counter.'
-	    }]
-	}];
-
 	document.observe('dom:loaded', function() {
-		new Gcc.Showcase({
+		new Gcc.ShowcaseList({
 			menuEl: 'sample-menu-inner',
 			contentEl: 'sample-box-inner',
 			controlBarEl: 'samples-cb',
-			items: catalog
+			items: [{
+				title:'DatePicker Samples',
+				samples: [{
+				  text: 'DatePicker dropdown',
+				  url : 'datepicker/datepicker-dropdown.html',
+				  icon: 'thumb-datepicker.gif',
+				  desc: 'DatePicker dropdown mode.'
+				},{
+				  text: 'DatePicker textfield',
+				  url : 'datepicker/datepicker-textfield.html',
+				  icon: 'thumb-datepicker.gif',
+				  desc: 'DatePicker textfield mode.'  
+				}]
+			},{
+				title:'ComboBox Samples',
+				samples: [{
+				  text: 'Basic ComboBox With Tooltip',
+				  url : 'combobox/simple-combo-box.html',
+				  icon: 'thumb-combo.gif',
+				  desc: 'ComboBox with Tooltip in each option.'
+				},{
+				  text: 'Multiple ComboBox instances',
+				  url : 'combobox/multiple-combo-box.html',
+				  icon: 'thumb-combo.gif',
+				  desc: 'Support Multiple ComboBox instances.'	  
+				},{
+				  text: 'TimePicker',
+				  url : 'combobox/time-picker.html',
+				  icon: 'thumb-combo.gif',
+				  desc: 'TimePicker ComboBox to edit time.'	  
+				}]
+			},{
+				title:'Popup Window Samples',
+				samples: [{
+				  text: 'Combination Examples',
+				  url : 'popup-window/mixed-popups.html',
+				  icon: 'thumb-popup.gif',
+				  desc: 'Combination Window examples.'
+				},{
+				  text: 'Single Popup Window',
+				  url : 'popup-window/single-popup.html',
+				  icon: 'thumb-popup.gif',
+				  desc: 'Just a single Popup Window.'
+				},{
+				  text: 'Custom Alert MessageBox',
+				  url : 'popup-window/customize-alert-message-box.html',
+				  icon: 'thumb-alert.gif',
+				  desc: 'Customized Alert MessageBox.'
+				},{
+				  text: 'Custom Confirm MessageBox',
+				  url : 'popup-window/customize-confirm-message-box.html',
+				  icon: 'thumb-popup.gif',
+				  desc: 'Customized Confirm MessageBox.'
+				},{
+				  text: 'Alert MessageBox',
+				  url : 'popup-window/alert-message-box.html',
+				  icon: 'thumb-alert.gif',
+				  desc: 'Look and feel like Alert MessageBox.'
+				},{
+				  text: 'Confirm MessageBox',
+				  url : 'popup-window/confirm-message-box.html',
+				  icon: 'thumb-popup.gif',
+				  desc: 'Look and feel like Confirm MessageBox.'
+				},{
+				  text: 'Dialog Info',
+				  url : 'popup-window/dialog-info.html',
+				  icon: 'thumb-popup.gif',
+				  desc: 'Show info in a dialog.'
+				},{
+				  text: 'IFrame popup',
+				  url : 'popup-window/iframe-popup.html',
+				  icon: 'thumb-popup.gif',
+				  desc: 'Show popup window with iframe.'
+				}]
+			},{
+				title:'More Samples',
+				samples: [{
+				  text: 'Error Messaging',
+				  url : 'error-container/error-messaging.html',
+				  icon: 'thumb-error.gif',
+				  desc: 'Show Error Container.'
+				},{
+				  text: 'Basic Tooltip',
+				  url : 'tooltip/simple-tooltip.html',
+				  icon: 'thumb.gif',
+				  desc: 'Show simple tooltip.'
+				},{
+				  text: 'Dynamic Locale',
+				  url : 'locale/locale-dropdown.html',
+				  icon: 'thumb.gif',
+				  desc: 'Show dynamic locale from dropdown.'
+				},{
+				  text: 'Image Preview',
+				  url : 'image-preview/simple-image-preview.html',
+				  icon: 'thumb.gif',
+				  desc: 'Show simple image preview.'
+				},{
+				  text: 'Char Counter',
+				  url : 'char-counter/simple-char-counter.html',
+				  icon: 'thumb.gif',
+				  desc: 'Show char counter.'
+				}]
+			}]
 		});
 	});
 
@@ -138,7 +146,7 @@
 
 		<!-- START Content Area -->
 		<div id="bd">
-			<h3 class="samples-title">Gcc UI Components Documentation and Examples</h3>
+			<h3 class="samples-title">Gcc UI Showcase Examples List</h3>
 
 			<!-- START Samples Area -->
 			<div id="samples">

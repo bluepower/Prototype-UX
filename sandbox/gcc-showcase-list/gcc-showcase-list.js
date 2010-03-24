@@ -1,14 +1,10 @@
-if(typeof Gcc == 'undefined' || !Gcc) {
-	Gcc = {};
-}
-
 /**
- * @class Gcc.Showcase
+ * @class Gcc.ShowcaseList
  * @author Niko Ni
  * @create 2010-03-21
- * @update 2010-03-23
+ * @update 2010-03-24
  */
-Gcc.Showcase = Class.create({
+Gcc.ShowcaseList = Class.create({
 	/**
 	 * @constructor
 	 */
@@ -24,7 +20,9 @@ Gcc.Showcase = Class.create({
 	},
 
 	initMarkup : function() {
-		var menuHtml = '', ctHtml = '', ctItemHtml = '';
+		var menuHtml = '',
+			ctHtml = '',
+			ctItemHtml = '';
 
 		this.initTemplates();
 
@@ -34,6 +32,7 @@ Gcc.Showcase = Class.create({
 				id: item.id,
 				title: item.title
 			});
+			
 			menuHtml += this.menuTpl.evaluate({
 				id: item.id,
 				title: item.title				
@@ -72,12 +71,14 @@ Gcc.Showcase = Class.create({
 				t.addClassName('over');
 			}
 		});
+
 		this.ct.observe('mouseout', function(ev) {
 			var t = ev.findElement('dd');
 			if(t) {
 				t.removeClassName('over');
 			}
 		});
+
 		this.ct.observe('click', function(ev) {
 			var item = ev.findElement('dd'),
 				title = ev.findElement('h2');
@@ -89,20 +90,40 @@ Gcc.Showcase = Class.create({
 			}
 
 			if(title) {
-				this.toggleClass(title.up('div'), 'collapsed');
+				title.up('div').toggleClassName('collapsed');
 			}
 		}.bind(this));
 
 		this.menu.observe('click', function(ev) {
 			ev.stop();
-			//@TODO
-		});
+			//@TODO - fix for IE
+			if(!Prototype.Browser.IE) {
+				var item = ev.findElement('a');
+				if(item && this.bound) {
+					this.radioClass(item, 'active');
+					this.bindScroll(false);
+
+					var ctItem = $('sample-' + item.id.split('-').pop());
+					if(ctItem) {
+						this.ct.setStyle({
+							'position': 'relative'
+						});
+						new Effect.Move(this.ct.firstDescendant(), {
+							duration: 0.3,
+							y: -ctItem.offsetTop,
+							afterFinish: this.bindScroll.bind(this, true),
+							mode: 'absolute'
+						});
+					}
+				}
+			}
+		}.bind(this));
 
 		this.cb.observe('click', function(ev) {
 			var img = ev.findElement('img');
 			if(img) {
 				$('samples').className = img.className;
-				//this.calcScrollPosition();
+				this.calcScrollPosition();
 			}
 		}.bind(this));
 
@@ -114,7 +135,7 @@ Gcc.Showcase = Class.create({
 	initTemplates : function() {		
 		this.ctTpl = new Template(
 			'<div>' +
-			  '<a name="#{id}" id="#{id}"><h2><div unselectable="on">#{title}</div></h2>' +
+			  '<a name="#{id}" id="#{id}"></a><h2><div unselectable="on">#{title}</div></h2>' +
 			  '<dl id="sample-ct-#{id}"></dl>' +
 			'</div>'
 		);
@@ -127,20 +148,20 @@ Gcc.Showcase = Class.create({
 		);
 
 		this.menuTpl= new Template(
-			'<a href="#" hidefocus="on" id="a4#{id}">#{title}</a>'
+			'<a href="#" hidefocus="on" id="menu-#{id}">#{title}</a>'
 		);
 	},
 
 	calcScrollPosition : function() {
 		var last, found = false;
-		this.ct.select('a[name]').each(function(item) {
-			last = item;
 
-			if(item.getOffsetsTo(this.ct)[1] >= -10) {
+		this.ct.select('a').each(function(item) {
+			last = item;			
+			if(item.cumulativeOffset()[1] - item.cumulativeScrollOffset()[1] >= -10) {
 				this.activate(item.id);
 				found = true;
-				return false;
-			}
+				throw $break;
+			}			
 		}.bind(this));
 
 		if(!found) {
@@ -160,7 +181,7 @@ Gcc.Showcase = Class.create({
 	},
 
 	activate : function(id) {
-		var el = $('a4' + id);
+		var el = $('menu-' + id);
 		this.radioClass(el, 'active');
 	},
 
@@ -172,15 +193,5 @@ Gcc.Showcase = Class.create({
             });
             el.addClassName(cls);
         }
-    },
-
-	toggleClass : function(el, cls) {
-		if(el) {
-			if(el.hasClassName(cls)) {
-				el.removeClassName(cls);
-			} else {
-				el.addClassName(cls);
-			}
-		}
-	}
+    }
 });
