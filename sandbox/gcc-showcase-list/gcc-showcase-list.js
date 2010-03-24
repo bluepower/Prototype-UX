@@ -105,9 +105,9 @@ Gcc.ShowcaseList = Class.create({
 
 					var ctItem = $('sample-' + item.id.split('-').pop());
 					if(ctItem) {
-						this.ct.setStyle({
-							'position': 'relative'
-						});
+						//this.ct.setStyle({
+							//'position': 'relative'
+						//});
 						new Effect.Move(this.ct.firstDescendant(), {
 							duration: 0.3,
 							y: -ctItem.offsetTop,
@@ -156,8 +156,9 @@ Gcc.ShowcaseList = Class.create({
 		var last, found = false;
 
 		this.ct.select('a').each(function(item) {
-			last = item;			
-			if(item.cumulativeOffset()[1] - item.cumulativeScrollOffset()[1] >= -10) {
+			last = item;
+			
+			if(this.getOffsetsTo(item) >= -10) {
 				this.activate(item.id);
 				found = true;
 				throw $break;
@@ -183,6 +184,12 @@ Gcc.ShowcaseList = Class.create({
 	activate : function(id) {
 		var el = $('menu-' + id);
 		this.radioClass(el, 'active');
+	},
+
+	getOffsetsTo : function(el) {
+		if(el) {
+			return el.cumulativeOffset()[1] - el.cumulativeScrollOffset()[1];
+		}
 	},
 
     radioClass : function(el, cls) {
