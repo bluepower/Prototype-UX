@@ -40,7 +40,7 @@ img.small-warning { float: left;margin-right: 3px;width: 16px;height: 16px;backg
 	.tip-import-hover p { margin: 0;padding: 3px;color: #1c67ab; }
 	.tip-import-hover p.highlight { background-color: #fff;color: #000; }
 
-.popup-wrap { padding: 4px 10px 10px 10px; }
+.popup-wrap { padding: 4px 10px 10px 10px;-moz-user-select:none;-khtml-user-select:none; }
 	.popup-wrap .txt-field { clear: both; }
 	.popup-wrap .group-btns { clear: both;margin-top: 10px; }
 		.popup-wrap .group-btns .rt { float: right; }
