@@ -1,6 +1,7 @@
 body { margin: 5px 5px 0 5px;padding: 0;position: relative;font-size: small;background-color: #E9EFF4;font-family: Helvetica,Verdana,sans-serif;color: #000; }
 a:link { text-decoration: underline; }
 a:visited,a:hover,a:active { text-decoration: none; }
+.align-center { text-align: center; }
 .item-clear { clear: both;height: 0;overflow: hidden; }
 .use-shim { position: absolute;visibility: hidden;left: 0;top: 0;overflow: hidden; }
 
@@ -36,11 +37,23 @@ img.small-warning { float: left;margin-right: 3px;width: 16px;height: 16px;backg
 .selectbox { margin: 0 5px 10px 0;height: 16px;padding-right: 16px;font-family: Helvetica,Verdana,sans-serif;font-size: 90%;display: block;text-align: left;background: url(../images/icon-trigger-sprite.gif) no-repeat;background-color: #fff;background-position: right 0;cursor: pointer;border: 1px solid #7F9DB9;color: #000080; }
 .combo-hover { background-position: right -18px; }
 
+.toolbar-wrap { margin-top: 10px; }
+	.toolbar-buttons a { float: left;margin-right: 5px;padding-left: 22px;height: 20px;line-height: 20px;font-weight: bold;font-size: 115%;text-decoration: underline; }
+    .toolbar-buttons a:link { font: Helvetica,Verdana,sans-serif;color: #1C67AB;text-decoration: underline; }
+    .toolbar-buttons a:visited { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
+    .toolbar-buttons a:hover { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: underline; }
+    .toolbar-buttons a:active { font: Helvetica,Verdana,sans-serif;color:#1C67AB;text-decoration: none; }
+		a.btn-delete { background: url(../images/icon-delete-sprite.gif) no-repeat 0 0; }
+		a.btn-next { background: url(../images/icon-next-sprite.gif) no-repeat; }
+		a.btn-back { background: url(../images/icon-back-sprite.gif) no-repeat; }
+img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;cursor: pointer;background: url(../images/icon-date-picker.gif) no-repeat; }
+
 .tip-import-hover { position: absolute;top: 0;left: 0;z-index: 100;width: 520px;height: 106px;padding-left: 20px;padding-right: 10px;background: #ffc url(../images/icon-tip.gif) no-repeat 0 5px;border: 1px solid #fc0;font: normal 100% Helvetica, Verdana, sans-serif; }
 	.tip-import-hover p { margin: 0;padding: 3px;color: #1c67ab; }
 	.tip-import-hover p.highlight { background-color: #fff;color: #000; }
 
 .popup-wrap { padding: 4px 10px 10px 10px;-moz-user-select:none;-khtml-user-select:none; }
+    .popup-wrap .title-label { clear: both;height: 18px;line-height: 18px; }
 	.popup-wrap .txt-field { clear: both; }
 	.popup-wrap .group-btns { clear: both;margin-top: 10px; }
 		.popup-wrap .group-btns .rt { float: right; }
@@ -53,9 +66,6 @@ img.small-warning { float: left;margin-right: 3px;width: 16px;height: 16px;backg
 .popup-wrap .lt-align1 { float: left;margin-left: 6px; }
 .popup-wrap .schedule-select-short { width: 75px; }
 .popup-wrap .schedule-select-short1 { width: 50px; }
-
-a.btn-delete { background: url(../images/icon-delete-sprite.gif) no-repeat 0 0; }
-img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;cursor: pointer;background: url(../images/icon-date-picker.gif) no-repeat; }
 
 .tip-item { float: left;margin-left: 2px;width: 20px;height: 20px;background: url(../images/icon-tip.gif) no-repeat top left; }
 .tip-item-hover { position: absolute;top: 0;left: 0;z-index: 100;width: 460px;height: auto;padding-left: 20px;padding-right: 10px;background: #ffc url(../images/icon-tip.gif) no-repeat 0 5px;border: 1px solid #fc0;font: normal 11px Helvetica, Verdana, sans-serif; }
@@ -135,6 +145,12 @@ img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;
     .comment-msg-wrap span.rt { float: right; }
     .comment-msg-wrap textarea { width: 324px;height: 75px;font-size: 100%;font-family: Helvetica,Verdana,sans-serif; }
 .resource-wrap { clear: both; }
+	.resource-wrap .title-label { margin-top: 5px; }
     .resource-wrap .comment-msg-wrap { margin-top: 12px;width: 284px; }
     .resource-wrap .comment-msg-wrap span.rt { font-weight: bold; }
     .resource-wrap .comment-msg-wrap textarea { width: 280px; }
+.slides-preview { clear: both;margin-left: auto;margin-right: auto;width: 250px;height: 180px;text-align: center; }
+.slides-btns { clear: both;margin-top: 12px; }
+    .slides-btns .toolbar-buttons { float: left;margin-left: 130px;_margin-left: 70px; }
+    .slides-btns a { margin-left: 10px; }
+    .slides-btns a span { display: none; }
