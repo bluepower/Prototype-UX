@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Slides Preview Example</title>
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-example.css" />
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-window.css" />
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-ext.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-window.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	var fnSlidesPreview = function() {
+		Gcc.webContext = '';
+		Gcc.locale.update({
+			'PUBLISHED_PPT_PREVIEW': "Published PowerPoint Preview:"
+		});
+
+        var sPreloadXmlUrl = 'assets/preload.xml';
+      
+        Gcc.ajax(null, sPreloadXmlUrl, {
+            method : 'GET',
+			onLoading: null,
+            onSuccess: function(response) {			
+                Gcc.setSlidesPreview({
+                    renderTo : 'ppt_preview_popup',
+                    nameEl   : 'ppt_name',
+                    title    : 'Web Developer Test',
+                    name     : 'Web-Developer-Test.ppt',
+                    url      : 'assets/',
+                    width    : 380,
+                    height   : 300,
+                    xmlDoc   : response.responseXML.documentElement
+                });
+            }
+        });
+	};
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2 class="item-top">Notice: please view this example through HTTP protocol</h2>
+<div class="playground">
+	<button onclick="fnSlidesPreview()">Slides Preview</button>
+</div>
+
+  <!-- /////////////////////////// START Html Markups for Published PPT Preview Popup /////////////////////////// -->
+  <div id="ppt_preview_popup" style="display: none;">
+      <!-- START Popup Wrap Area -->
+      <div class="resource-wrap popup-wrap">
+        <div id="ppt_name" class="title-label align-center"></div>
+        <div class="slides-preview">
+          <img id="slide_display" src="assets/s.gif" alt="Slides Preview" title="Slides Preview" />
+        </div>
+        <div id="slide_title" class="title-label align-center">Slide Number: Slide Title</div>
+        <div class="slides-btns">
+          <div class="toolbar-buttons">
+            <a href="#" id="btn_prev_slide" class="btn-back" title="Previous Slide"><span>Previous Slide</span></a>
+            <a href="#" id="btn_next_slide" class="btn-next" title="Next Slide"><span>Next Slide</span></a>
+          </div>
+        </div>
+		<div class="group-btns">
+		  <div class="rt">
+			<a href="#" class="btn-delete" title="Close" onclick="Gcc.closeWindow();">Close</a>
+		  </div>
+		  <div class="item-clear"></div>
+		</div>
+      </div>
+      <!-- END Popup Wrap Area -->
+  </div>
+  <!-- /////////////////////////// END Html Markups for Published PPT Preview Popup /////////////////////////// -->
+
+</body>
+</html>

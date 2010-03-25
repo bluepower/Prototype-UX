@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<presentation title="Genesys Web Developer Test"  originalfile="" author="Amanda De Mello" filesize="48640" numslides="4" lastmodifiedtime="Thursday, October 15, 2009 04:24:51 GMT" publishtime="Thursday, October 15, 2009 04:24:56 GMT">
+<pubdata>
+  <publisher name="ClientConfWiz" publisherversion="4,4,2,008" automation="Powerpoint V12.0.6211 [Windows (32-bit) 5.02]" />
+  <cachedpresentation subdir="presentation" file="cached.ppt" filesize="48640" />
+  <pubversion id="1" name="Animated Presentation: 700 x 638" type="0" width="700" height="638" orientation="0" subdir="700x638" size="26251" />
+  <pubversion id="2" name="Thumbnail: 240 x 180" type="3" width="240" height="180" orientation="0" subdir="preview" size="27130" />
+</pubdata>
+  <slide title="Genesys Web Developer Test" file1="1-Genesys_Web_Developer_Test.html" size1="7452" file2="Slide_1.png" size2="550" >
+    <component file="tabletop.gif" size1="85" />
+    <component file="1-Genesys_Web_Developer_Test.html" size1="3496" />
+    <component file="1Item1.gif" size1="397" />
+    <component file="1Item2.gif" size1="1764" />
+    <component file="1Item3.gif" size1="393" />
+    <component file="1Item4.gif" size1="1317" />
+    <component file="Slide_1.png" size2="550" />
+  </slide>
+  <slide title="First Screen" file1="2-First_Screen.html" size1="7031" file2="Slide_2.png" size2="10075" >
+    <component file="2-First_Screen.html" size1="3149" />
+    <component file="2Item5.gif" size1="944" />
+    <component file="2Item6.gif" size1="2938" />
+    <component file="Slide_2.png" size2="10075" />
+  </slide>
+  <slide title="Mouseover Behaviour" file1="3-Mouseover_Behaviour.html" size1="6476" file2="Slide_3.png" size2="8588" >
+    <component file="3-Mouseover_Behaviour.html" size1="3148" />
+    <component file="3Item25.gif" size1="1359" />
+    <component file="3Item26.gif" size1="1969" />
+    <component file="Slide_3.png" size2="8588" />
+  </slide>
+  <slide title="Edit Row" file1="4-Edit_Row.html" size1="5292" file2="Slide_4.png" size2="7917" >
+    <component file="4-Edit_Row.html" size1="3156" />
+    <component file="4Item30.gif" size1="848" />
+    <component file="4Item31.gif" size1="1288" />
+    <component file="Slide_4.png" size2="7917" />
+  </slide>
+</presentation>
