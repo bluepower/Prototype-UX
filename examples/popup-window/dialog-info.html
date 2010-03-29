@@ -15,7 +15,9 @@
 // <![CDATA[
 
 	var fnShowDialogInfo = function() {
-		Gcc.showInfo('Loading Data. Please Wait...');
+		Gcc.showInfo({
+			info: '<img src="assets/loading.gif" alt="loading" align="absmiddle" />loading'
+		});
 
 		setTimeout(function() {
 			Gcc.closeInfo();
