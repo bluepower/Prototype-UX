@@ -154,3 +154,10 @@ img.btn-datepicker { float: left;margin: 1px 7px 0 3px;width: 25px;height: 16px;
     .slides-btns .toolbar-buttons { float: left;margin-left: 130px;_margin-left: 70px; }
     .slides-btns a { margin-left: 10px; }
     .slides-btns a span { display: none; }
+
+.accordion-menu { float: left;margin-left: 30px;width: 200px;border: 1px solid #c2c2c2; }
+	.accordion-menu ul { margin: 0;padding: 0;list-style-type: none; }
+		.accordion-menu .accordion-hd { padding: 5px 0 4px 25px;background: #f8f8f8 url(../images/icon-arrow-right.gif) no-repeat 6px center;cursor: pointer;font-size: 110%; }
+		.accordion-menu .accordion-bd { padding: 0;height: 0;overflow: hidden;border-top: 1px solid #c2c2c2;background: url(../images/bg-tab-status-border.gif) repeat-x left bottom;  }
+		.accordion-menu ul li.selected-item .accordion-hd { background: #f8f8f8 url(../images/icon-arrow-down.gif) no-repeat 4px center; }
+		.accordion-menu ul li.selected-item .accordion-bd { padding: 3px;height: 90px;overflow: auto; }

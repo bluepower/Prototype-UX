@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Accordion Menu Example</title>
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-example.css" />
+<link type="text/css" rel="stylesheet" href="../../resources/css/gcc-ext.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"></script>
+<script type="text/javascript" src="../../src/gcc-ext.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	document.observe('dom:loaded', function() {
+		var accordion = new Gcc.Accordion({
+			contentEl: 'accordion-menu'
+		});
+		accordion.setActiveItem(0);
+	});
+
+// ]]>
+</script>
+</head>
+
+<body>
+
+<h2 class="item-top">Accordion Menu</h2>
+<div class="playground">
+				<div id="accordion-menu" class="accordion-menu">
+				  <ul>
+				    <li>
+					  <div class="accordion-hd">NAME &amp; ID</div>
+					  <div class="accordion-bd">name, id...</div>
+					</li>
+					<li>
+					  <div class="accordion-hd">TYPE</div>
+					  <div class="accordion-bd">type...</div>
+					</li>
+					<li>
+					  <div class="accordion-hd">STATUS</div>
+					  <div class="accordion-bd">status...</div>
+					</li>
+					<li>
+					  <div class="accordion-hd">VERSION</div>
+					  <div class="accordion-bd">version...</div>
+					</li>
+					<li>
+					  <div class="accordion-hd">DATES</div>
+					  <div class="accordion-bd">dates...</div>
+					</li>
+					<li>
+					  <div class="accordion-hd">DURATION</div>
+					  <div class="accordion-bd">duration...</div>
+					</li>
+					<li>
+					  <div class="accordion-hd">CONTENT</div>
+					  <div class="accordion-bd">content...</div>
+					</li>
+					<li>
+					  <div class="accordion-hd">DOWNLOAD LINKS</div>
+					  <div class="accordion-bd">...</div>
+					</li>
+				  </ul>
+				</div>
+				<div class="item-clear"></div>
+</div>
+
+</body>
+</html>
